@@ -13,6 +13,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+
 export const metadata: Metadata = {
   title: "AI Dev with next AI SDK",
   description: "AI Development with next AI SDK",
