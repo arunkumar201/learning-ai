@@ -1,12 +1,13 @@
-import { GoogleChat } from '@/components/google-chat/google-chat'
-import { Suspense } from 'react'
 export default function Home() {
 	return (
-		<div className="bg-gray-700 text-gray-50 grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-10 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-			<h1 className="text-xl md:text-3xl underline leading-7 italic">
-				AI Development with next AI SDK{' '}
-			</h1>
-			<GoogleChat />
-		</div>
+		<>
+			<main className="p-2 w-full">
+				<div className="w-full flex flex-col items-center justify-center gap-2 text-center">
+					<h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-xl md:text-4xl lg:text-3xl font-sans relative z-20 font-bold tracking-tight">
+						Welcome to Next.js AI SDK!
+					</h2>
+				</div>
+			</main>
+		</>
 	)
 }
