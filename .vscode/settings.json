@@ -11,5 +11,10 @@
 	"prettier.bracketSpacing": true,
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"notebook.output.wordWrap": true,
+	"notebook.stickyScroll.mode": "flat",
+	"jupyter.themeMatplotlibPlots": true,
+	"data.preview.theme": "dense.dark",
+	"material-icon-theme.folders.theme": "classic"
 }
