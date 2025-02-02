@@ -16,5 +16,8 @@
 	"notebook.stickyScroll.mode": "flat",
 	"jupyter.themeMatplotlibPlots": true,
 	"data.preview.theme": "dense.dark",
-	"material-icon-theme.folders.theme": "classic"
+	"material-icon-theme.folders.theme": "classic",
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter"
+	}
 }

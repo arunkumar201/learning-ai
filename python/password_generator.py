@@ -1,9 +1,11 @@
 import random
+import string
 
-digits_set = "0123456789"
-special_chars_set = "!@#$%^&*()-_=+[{]};:,.<>/?"
-lowercase_set = "abcdefghijklmnopqrstuvwxyz"
-uppercase_set = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+digits_set =string.digits
+special_chars_set =string.punctuation
+ # can be used string.ascii_letters
+lowercase_set = string.ascii_lowercase 
+uppercase_set = string.ascii_uppercase 
 
 def generate_random_password(minLen=8, maxLen=16, digits=True, specialChars=True, lowercase=True, uppercase=True):
     """Generate a random password."""
@@ -29,7 +31,7 @@ def generate_random_password(minLen=8, maxLen=16, digits=True, specialChars=True
         password.append(random.choice(digits_set + special_chars_set + lowercase_set + uppercase_set))
 
     # Shuffle the password to make it more secure
-    random.shuffle(password)
+    random.shuffle(password,)
     return ''.join(password)
 
 def check_password_strength(password):
