@@ -25,6 +25,23 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "BrowserConfig",
         "importPath": "crawl4ai",
         "description": "crawl4ai",
@@ -41,11 +58,99 @@
         "documentation": {}
     },
     {
-        "label": "Dict",
+        "label": "CrawlerRunConfig",
+        "importPath": "crawl4ai",
+        "description": "crawl4ai",
+        "isExtraImport": true,
+        "detail": "crawl4ai",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncWebCrawler",
+        "importPath": "crawl4ai",
+        "description": "crawl4ai",
+        "isExtraImport": true,
+        "detail": "crawl4ai",
+        "documentation": {}
+    },
+    {
+        "label": "CacheMode",
+        "importPath": "crawl4ai",
+        "description": "crawl4ai",
+        "isExtraImport": true,
+        "detail": "crawl4ai",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncWebCrawler",
+        "importPath": "crawl4ai",
+        "description": "crawl4ai",
+        "isExtraImport": true,
+        "detail": "crawl4ai",
+        "documentation": {}
+    },
+    {
+        "label": "List",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
         "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "Venue",
+        "importPath": "models.crawl_venue.venue",
+        "description": "models.crawl_venue.venue",
+        "isExtraImport": true,
+        "detail": "models.crawl_venue.venue",
+        "documentation": {}
+    },
+    {
+        "label": "is_complete_venue",
+        "importPath": "utils.data_utils",
+        "description": "utils.data_utils",
+        "isExtraImport": true,
+        "detail": "utils.data_utils",
+        "documentation": {}
+    },
+    {
+        "label": "is_duplicate_venue",
+        "importPath": "utils.data_utils",
+        "description": "utils.data_utils",
+        "isExtraImport": true,
+        "detail": "utils.data_utils",
+        "documentation": {}
+    },
+    {
+        "label": "save_venues_to_xlsx",
+        "importPath": "utils.data_utils",
+        "description": "utils.data_utils",
+        "isExtraImport": true,
+        "detail": "utils.data_utils",
         "documentation": {}
     },
     {
@@ -58,20 +163,59 @@
         "documentation": {}
     },
     {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
+        "label": "get_browser_config",
+        "importPath": "utils.scraper_utils",
+        "description": "utils.scraper_utils",
         "isExtraImport": true,
-        "detail": "dotenv",
+        "detail": "utils.scraper_utils",
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
+        "label": "fetch_and_process_venue_page",
+        "importPath": "utils.scraper_utils",
+        "description": "utils.scraper_utils",
         "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
+        "detail": "utils.scraper_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_llm_strategy_for_venue",
+        "importPath": "utils.scraper_utils",
+        "description": "utils.scraper_utils",
+        "isExtraImport": true,
+        "detail": "utils.scraper_utils",
+        "documentation": {}
+    },
+    {
+        "label": "VENUE_BASE_URL",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "VENUE_CSS_SELECTOR",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "REQUIRED_KEYS",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
         "documentation": {}
     },
     {
@@ -281,21 +425,93 @@
         "documentation": {}
     },
     {
-        "label": "get_browser_config",
-        "kind": 2,
-        "importPath": "projects.lead-generation.utils.scraper_utils",
-        "description": "projects.lead-generation.utils.scraper_utils",
-        "peekOfCode": "def get_browser_config() -> BrowserConfig:\n    \"\"\"\n    Returns a BrowserConfig object with default settings.\n    \"\"\"\n    browser_config = BrowserConfig(\n        browser_type=\"chromium\",\n        headless=True,\n        viewport_height=1080,\n        viewport_width=1080,\n    )",
-        "detail": "projects.lead-generation.utils.scraper_utils",
+        "label": "Venue",
+        "kind": 6,
+        "importPath": "projects.lead_generation.models.crawl_venue.venue",
+        "description": "projects.lead_generation.models.crawl_venue.venue",
+        "peekOfCode": "class Venue(BaseModel):\n    \"\"\"\n    Represents a venue data structure/shape\n    \"\"\"\n    name: str\n    location: str\n    price: str\n    capacity: str\n    rating: float\n    reviews: int",
+        "detail": "projects.lead_generation.models.crawl_venue.venue",
         "documentation": {}
     },
     {
-        "label": "get_llm_strategy",
+        "label": "is_duplicate_venue",
         "kind": 2,
-        "importPath": "projects.lead-generation.utils.scraper_utils",
-        "description": "projects.lead-generation.utils.scraper_utils",
-        "peekOfCode": "def get_llm_strategy() -> LLMExtractionStrategy:\n    pass\nasync def has_more_result():\n    pass",
-        "detail": "projects.lead-generation.utils.scraper_utils",
+        "importPath": "projects.lead_generation.utils.data_utils",
+        "description": "projects.lead_generation.utils.data_utils",
+        "peekOfCode": "def is_duplicate_venue(venue_name: str, seen_names: set) -> bool:\n    return venue_name in seen_names\ndef is_complete_venue(venue: dict, required_keys: list) -> bool:\n    return all(key in venue for key in required_keys)\ndef save_venues_to_xlsx(venues: list, filename: str):\n    if not venues:\n        print(\"No venues to save.\")\n        return\n    if not filename.endswith(\".xlsx\"):\n        filename += \".xlsx\"",
+        "detail": "projects.lead_generation.utils.data_utils",
+        "documentation": {}
+    },
+    {
+        "label": "is_complete_venue",
+        "kind": 2,
+        "importPath": "projects.lead_generation.utils.data_utils",
+        "description": "projects.lead_generation.utils.data_utils",
+        "peekOfCode": "def is_complete_venue(venue: dict, required_keys: list) -> bool:\n    return all(key in venue for key in required_keys)\ndef save_venues_to_xlsx(venues: list, filename: str):\n    if not venues:\n        print(\"No venues to save.\")\n        return\n    if not filename.endswith(\".xlsx\"):\n        filename += \".xlsx\"\n    import pandas as pd\n    df = pd.DataFrame(venues)",
+        "detail": "projects.lead_generation.utils.data_utils",
+        "documentation": {}
+    },
+    {
+        "label": "save_venues_to_xlsx",
+        "kind": 2,
+        "importPath": "projects.lead_generation.utils.data_utils",
+        "description": "projects.lead_generation.utils.data_utils",
+        "peekOfCode": "def save_venues_to_xlsx(venues: list, filename: str):\n    if not venues:\n        print(\"No venues to save.\")\n        return\n    if not filename.endswith(\".xlsx\"):\n        filename += \".xlsx\"\n    import pandas as pd\n    df = pd.DataFrame(venues)\n    df.to_excel(filename, index=False)\n    print(f\"Saved {len(venues)} venues to '{filename}'.\")",
+        "detail": "projects.lead_generation.utils.data_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_browser_config",
+        "kind": 2,
+        "importPath": "projects.lead_generation.utils.scraper_utils",
+        "description": "projects.lead_generation.utils.scraper_utils",
+        "peekOfCode": "def get_browser_config() -> BrowserConfig:\n    \"\"\"\n    Returns a BrowserConfig object with default settings.\n    \"\"\"\n    browser_config = BrowserConfig(\n        browser_type=\"chromium\",\n        headless=False,\n        verbose=False,\n        viewport_height=1080,\n        viewport_width=1080,",
+        "detail": "projects.lead_generation.utils.scraper_utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_llm_strategy_for_venue",
+        "kind": 2,
+        "importPath": "projects.lead_generation.utils.scraper_utils",
+        "description": "projects.lead_generation.utils.scraper_utils",
+        "peekOfCode": "def get_llm_strategy_for_venue() -> LLMExtractionStrategy:\n    \"\"\"\n    Returns a LLMExtractionStrategy object for venue data.\n    \"\"\"\n    llm_strategy = LLMExtractionStrategy(\n        provider=\"groq/deepseek-r1-distill-llama-70b\",\n        api_token=\"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\",\n        chunk_token_threshold=1000,\n        schema=Venue.model_json_schema(),\n        instruction=(",
+        "detail": "projects.lead_generation.utils.scraper_utils",
+        "documentation": {}
+    },
+    {
+        "label": "ENV_TYPE",
+        "kind": 5,
+        "importPath": "projects.lead_generation.utils.scraper_utils",
+        "description": "projects.lead_generation.utils.scraper_utils",
+        "peekOfCode": "ENV_TYPE = os.getenv(\"ENV_TYPE\")\ndef get_browser_config() -> BrowserConfig:\n    \"\"\"\n    Returns a BrowserConfig object with default settings.\n    \"\"\"\n    browser_config = BrowserConfig(\n        browser_type=\"chromium\",\n        headless=False,\n        verbose=False,\n        viewport_height=1080,",
+        "detail": "projects.lead_generation.utils.scraper_utils",
+        "documentation": {}
+    },
+    {
+        "label": "VENUE_BASE_URL",
+        "kind": 5,
+        "importPath": "projects.lead_generation.config",
+        "description": "projects.lead_generation.config",
+        "peekOfCode": "VENUE_BASE_URL = \"https://www.theknot.com/marketplace/wedding-videographers-new-york-ny\"\nVENUE_CSS_SELECTOR = \"[class^='info-container']\"\nREQUIRED_KEYS = [\n    \"name\",\n    \"price\",\n    \"location\",\n    \"capacity\",\n    \"rating\",\n    \"reviews\",\n    \"description\",",
+        "detail": "projects.lead_generation.config",
+        "documentation": {}
+    },
+    {
+        "label": "VENUE_CSS_SELECTOR",
+        "kind": 5,
+        "importPath": "projects.lead_generation.config",
+        "description": "projects.lead_generation.config",
+        "peekOfCode": "VENUE_CSS_SELECTOR = \"[class^='info-container']\"\nREQUIRED_KEYS = [\n    \"name\",\n    \"price\",\n    \"location\",\n    \"capacity\",\n    \"rating\",\n    \"reviews\",\n    \"description\",\n]",
+        "detail": "projects.lead_generation.config",
+        "documentation": {}
+    },
+    {
+        "label": "REQUIRED_KEYS",
+        "kind": 5,
+        "importPath": "projects.lead_generation.config",
+        "description": "projects.lead_generation.config",
+        "peekOfCode": "REQUIRED_KEYS = [\n    \"name\",\n    \"price\",\n    \"location\",\n    \"capacity\",\n    \"rating\",\n    \"reviews\",\n    \"description\",\n]",
+        "detail": "projects.lead_generation.config",
         "documentation": {}
     },
     {
