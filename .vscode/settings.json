@@ -3,7 +3,10 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit",
-		"editor.formatOnSave": "explicit"
+		"editor.formatOnSave": "explicit",
+		"source.organizeImports": "explicit",
+		"source.fixAll": "explicit",
+		"source.fixAll.organizeImports": "explicit"
 	},
 	"prettier.singleQuote": true,
 	"prettier.semi": false,
@@ -19,5 +22,13 @@
 	"material-icon-theme.folders.theme": "classic",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.black-formatter"
-	}
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"editor.formatOnSave": true,
+		"source.organizeImports": true,
+		"source.fixAll": true,
+		"source.fixAll.organizeImports": true
+	},
+	"cSpell.words": ["dotenv", "llms"]
 }
