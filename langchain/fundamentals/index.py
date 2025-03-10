@@ -1,13 +1,7 @@
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).parent.parent))
-
 from dotenv import load_dotenv
-from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import ChatPromptTemplate
-from langchain.schema import HumanMessage
+from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
@@ -48,12 +42,12 @@ def generate_response_stream(input_text):
 
 def generate_random_person():
     format_instructions = person_parser.get_format_instructions()
+    print("My format instructions:", format_instructions)
     messages = prompt_person.format_messages(format_instructions=format_instructions)
 
     try:
         response = llm.invoke(messages)
-        parsed_person = person_parser.parse(response.content)
-        return parsed_person
+        return person_parser.parse(response.content)
     except Exception as e:
         print(f"Error parsing response: {e}")
         print(f"Raw response: {response.content}")

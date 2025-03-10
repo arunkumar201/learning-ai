@@ -30,5 +30,5 @@
 		"source.fixAll": true,
 		"source.fixAll.organizeImports": true
 	},
-	"cSpell.words": ["dotenv", "llms"]
+	"cSpell.words": ["aiohappyeyeballs", "aiohttp", "dotenv", "llms"]
 }
