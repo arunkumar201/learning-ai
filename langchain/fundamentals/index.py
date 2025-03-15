@@ -1,13 +1,15 @@
 from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import ChatPromptTemplate
-from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
 from contracts.index import Person
 
-llm = ChatOpenAI(model="gpt-3.5-turbo")
+llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.5, streaming=True)
+
 person_parser = PydanticOutputParser(pydantic_object=Person)
 
 prompt_country = ChatPromptTemplate.from_template(
@@ -42,7 +44,7 @@ def generate_response_stream(input_text):
 
 def generate_random_person():
     format_instructions = person_parser.get_format_instructions()
-    print("My format instructions:", format_instructions)
+    # print("My format instructions:", format_instructions)
     messages = prompt_person.format_messages(format_instructions=format_instructions)
 
     try:
