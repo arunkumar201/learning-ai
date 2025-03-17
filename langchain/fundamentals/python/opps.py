@@ -56,10 +56,102 @@ my_person.get_details()
 
 # print(my_person.__private_method)
 
-# calling private method 
+# calling private method
 try:
     my_person._get_person_salary()
 except AttributeError as e:
     print("Can't access private attribute:", e)
 except Exception as e:
     print("An error occurred:", e)
+
+
+# parent and child class
+class Parent:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def talk(self):
+        print(f"Hello, my name is {self.name}")
+
+    def _protected_method(self):
+        print("This is a protected method")
+
+    def __private_method(self):
+        print("This is a private method")
+
+
+class Child(Parent):
+    def __init__(self, name, age, grade):
+        super().__init__(name, age)
+        self.grade = grade
+
+    def talk(self):
+        print(f"Hello, my name is {self.name} and I am {self.grade} grade")
+
+
+child = Child("John", 25, 10)
+child.talk()
+
+try:
+    child._protected_method()
+except Exception as e:
+    print("An error occurred:", e)
+
+try:
+    child.__private_method()  # this will raise an error as it is private
+except Exception as e:
+    print("An error occurred:", e)
+
+# polymorphism - child class can access parent class methods
+child.talk()
+child._protected_method()
+
+
+# abstract class
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def make_sound(self):
+        print(f"{self.name} makes a sound- {self.sound}")
+
+    def speak(self):
+        print(f"{self.name} speaks")
+
+    def eat(self):
+        print(f"{self.name} eats")
+
+    def sleep(self):
+        print(f"{self.name} sleeps")
+
+    def __str__(self):
+        return f"{self.name} is an animal"
+
+
+class Dog(Animal):
+    def __init__(self, name, sound):
+        super().__init__(name, sound)
+        self.sound = "bark"
+
+
+class Cat(Animal):
+    def __init__(self, name, sound):
+        super().__init__(name, sound)
+        self.sound = sound
+
+
+dog = Dog("Fido", "bark")
+cat = Cat("Whiskers", "meow")
+
+# Dog
+print("-------DOG-------")
+dog.make_sound()
+dog.speak()
+dog.eat()
+print("-------CAT-------")
+# Cat
+cat.make_sound()
+cat.speak()
+cat.eat()
