@@ -30,5 +30,16 @@
 		"source.fixAll": true,
 		"source.fixAll.organizeImports": true
 	},
-	"cSpell.words": ["aiohappyeyeballs", "aiohttp", "dotenv", "fastmcp", "llms"]
+	"cSpell.words": [
+		"aiohappyeyeballs",
+		"aiohttp",
+		"bunx",
+		"dotenv",
+		"fastmcp",
+		"llms",
+		"modelcontextprotocol"
+	],
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

@@ -1,0 +1,23 @@
+{
+	"name": "mcp-serve-ts",
+	"module": "index.ts",
+	"type": "module",
+	"scripts": {
+		"start": "npx tsx index.ts",
+		"dev": "npx concurrently \"bunx @modelcontextprotocol/inspector\" \"pnpm  start\""
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/express": "^5.0.1",
+		"i": "^0.3.7",
+		"npm": "^11.2.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.7.0",
+		"express": "^4.21.2",
+		"zod": "^3.24.2"
+	}
+}
