@@ -8,9 +8,7 @@
 	},
 	"devDependencies": {
 		"@types/bun": "latest",
-		"@types/express": "^5.0.1",
-		"i": "^0.3.7",
-		"npm": "^11.2.0"
+		"@types/express": "^5.0.1"
 	},
 	"peerDependencies": {
 		"typescript": "^5.0.0"
