@@ -2,11 +2,11 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
 import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js'
 import express from 'express'
 
+const transportMap = new Map<string, SSEServerTransport>()
+
 const app = express()
 
 export function createSSEServer(mcpServer: McpServer) {
-	const transportMap = new Map<string, SSEServerTransport>()
-
 	app.get('/sse', async (req, res) => {
 		try {
 			const transport = new SSEServerTransport('/messages', res)
