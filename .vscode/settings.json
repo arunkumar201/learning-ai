@@ -31,14 +31,21 @@
 		"source.fixAll.organizeImports": true
 	},
 	"cSpell.words": [
+		"addopts",
 		"aiohappyeyeballs",
 		"aiohttp",
 		"bunx",
+		"dataclasses",
+		"docstrings",
 		"dotenv",
 		"fastmcp",
+		"isort",
 		"llms",
 		"modelcontextprotocol",
-		"pois"
+		"mypy",
+		"pois",
+		"pytest",
+		"testpaths"
 	],
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
