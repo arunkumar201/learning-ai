@@ -2,6 +2,13 @@
 
 A robust server implementation of the Model Context Protocol (MCP) with Server-Sent Events (SSE) support, featuring Brave Search API integration for web and local search capabilities and scalable Project Architecture.
 
+
+
+https://github.com/user-attachments/assets/4791467c-ed4a-4279-b4b0-951181c857cf
+
+
+
+
 ## Features
 
 - **MCP Protocol Support**: Implements the [Model Context Protocol](https://github.com/modecry/modelcontextprotocol) for AI tool integration
