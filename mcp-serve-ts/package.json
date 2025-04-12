@@ -3,19 +3,23 @@
 	"module": "index.ts",
 	"type": "module",
 	"scripts": {
-		"start": "npx tsx index.ts",
-		"dev": "npx concurrently \"bunx @modelcontextprotocol/inspector\" \"pnpm  start\""
+		"build": "bun run tsc --outDir dist",
+		"start": "npx concurrently \"bunx @modelcontextprotocol/inspector\" \"pnpm build && bun run dist/index.js\"",
+		"dev": "npx concurrently \"bunx @modelcontextprotocol/inspector\" \"pnpm start\"",
+		"clean": "rm -rf dist",
+		"check-types": "tsc --noEmit"
 	},
 	"devDependencies": {
 		"@types/bun": "latest",
 		"@types/express": "^5.0.1"
 	},
 	"peerDependencies": {
-		"typescript": "^5.0.0"
+		"typescript": "^5.8.3"
 	},
 	"dependencies": {
 		"@modelcontextprotocol/sdk": "^1.7.0",
-		"express": "^4.21.2",
+		"dotenv": "^16.5.0",
+		"express": "^5.1.0",
 		"zod": "^3.24.2"
 	}
 }

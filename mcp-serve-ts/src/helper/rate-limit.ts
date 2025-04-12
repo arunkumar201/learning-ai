@@ -1,41 +1,65 @@
-export const rate_limit_config = {
+import { z } from 'zod'
+
+export const rateLimitConfigSchema = z.object({
+	perSecond: z.number().min(1).max(100).default(4),
+	windowMs: z.number().min(1000).max(60000).default(1000),
+})
+
+export const rateLimitConfig = rateLimitConfigSchema.parse({
 	perSecond: 4,
-}
+	windowMs: 1000,
+})
 
-//TODO: We will Replace with a more robust rate limiting mechanism
-interface IRequest {
+interface RateLimitState {
 	ip: string
-	last_reset: number
+	lastReset: number
 	remaining: number
+	blockedUntil?: number
 }
-const rateLimiter = new Map<string, IRequest>()
 
-export const rateLimit = async (ip: string) => {
-	if (rateLimiter.has(ip)) {
-		const request = rateLimiter.get(ip)!
-		const now = Date.now()
+const rateLimiter = new Map<string, RateLimitState>()
 
-		// Check if we should reset the counter (1 second has passed)
-		if (now - request.last_reset >= 1000) {
-			request.remaining = rate_limit_config.perSecond
-			request.last_reset = now
+export class RateLimitError extends Error {
+	constructor(message: string, public readonly retryAfter: number) {
+		super(message)
+		this.name = 'RateLimitError'
+	}
+}
+
+export async function rateLimit(ip: string): Promise<void> {
+	const now = Date.now()
+	const state = rateLimiter.get(ip)
+
+	if (state?.blockedUntil && now < state.blockedUntil) {
+		throw new RateLimitError(
+			'Rate limit exceeded. Please try again later.',
+			Math.ceil((state.blockedUntil - now) / 1000)
+		)
+	}
+
+	if (state) {
+		if (now - state.lastReset >= rateLimitConfig.windowMs) {
+			state.remaining = rateLimitConfig.perSecond
+			state.lastReset = now
 		}
 
-		// Check if we've exceeded the rate limit
-		if (request.remaining <= 0) {
-			return false
+		if (state.remaining <= 0) {
+			const blockedUntil = now + rateLimitConfig.windowMs
+			state.blockedUntil = blockedUntil
+			rateLimiter.set(ip, state)
+			throw new RateLimitError(
+				'Rate limit exceeded. Please try again later.',
+				Math.ceil(rateLimitConfig.windowMs / 1000)
+			)
 		}
 
-		// Decrement remaining requests and update
-		request.remaining--
-		rateLimiter.set(ip, request)
-		return true
+		state.remaining--
+		rateLimiter.set(ip, state)
 	} else {
 		rateLimiter.set(ip, {
 			ip,
-			last_reset: Date.now(),
-			remaining: rate_limit_config.perSecond - 1,
+			lastReset: now,
+			remaining: rateLimitConfig.perSecond - 1,
 		})
-		return true
 	}
 }

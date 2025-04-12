@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 export const WEB_SEARCH_TOOL_DESCRIPTION = `
 
 This tool performs a web search using the Brave Search API, making it ideal for retrieving general information, news, articles, and online content. It’s perfect for:
@@ -48,5 +51,3 @@ Automatically falls back to web search if no local results are found.
 Perfect for queries that imply proximity or mention specific locations.
 
 Use this tool to find accurate, up-to-date information about nearby businesses and services, making it a valuable resource for location-based inquiries.`
-
-export const WEB_SEARCH_API_KEY = 'BRAVE_API_KEY'; 

@@ -1,4 +1,4 @@
-import { WEB_SEARCH_API_KEY } from '../constants/web-search'
+import { env } from '@env'
 import type {
 	BraveDescription,
 	BravePoiResponse,
@@ -35,7 +35,7 @@ async function getPoisData(ids: string[]): Promise<BravePoiResponse> {
 		headers: {
 			Accept: 'application/json',
 			'Accept-Encoding': 'gzip',
-			'X-Subscription-Token': WEB_SEARCH_API_KEY,
+			'X-Subscription-Token': env.BRAVE_API_KEY,
 		},
 	})
 
@@ -58,7 +58,7 @@ async function getDescriptionsData(ids: string[]): Promise<BraveDescription> {
 		headers: {
 			Accept: 'application/json',
 			'Accept-Encoding': 'gzip',
-			'X-Subscription-Token': WEB_SEARCH_API_KEY,
+			'x-subscription-token"': env.BRAVE_API_KEY,
 		},
 	})
 
@@ -118,11 +118,12 @@ export async function performWebSearch(
 	url.searchParams.set('count', Math.min(count, 20).toString()) // API limit
 	url.searchParams.set('offset', offset.toString())
 
+	console.log('Performing web search', url.toString())
 	const response = await fetch(url, {
 		headers: {
 			Accept: 'application/json',
 			'Accept-Encoding': 'gzip',
-			'X-Subscription-Token': WEB_SEARCH_API_KEY,
+			'X-Subscription-Token': env.BRAVE_API_KEY,
 		},
 	})
 
@@ -168,7 +169,7 @@ export async function performLocalSearch(
 			headers: {
 				Accept: 'application/json',
 				'Accept-Encoding': 'gzip',
-				'X-Subscription-Token': WEB_SEARCH_API_KEY,
+				'X-Subscription-Token': env.BRAVE_API_KEY,
 			},
 		})
 

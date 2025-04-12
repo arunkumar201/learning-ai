@@ -1,0 +1,3 @@
+{
+	"preload": ["./src/setup-aliases.ts"]
+}
