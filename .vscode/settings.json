@@ -34,18 +34,24 @@
 		"addopts",
 		"aiohappyeyeballs",
 		"aiohttp",
+		"anyio",
 		"bunx",
+		"certifi",
 		"dataclasses",
 		"docstrings",
 		"dotenv",
 		"fastmcp",
 		"isort",
 		"llms",
+		"mdurl",
 		"modelcontextprotocol",
 		"mypy",
 		"pois",
+		"pygments",
 		"pytest",
-		"testpaths"
+		"starlette",
+		"testpaths",
+		"uvicorn"
 	],
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
