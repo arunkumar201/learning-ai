@@ -1,0 +1,12 @@
+{
+  "prompt": "nextjs",
+  "url": "https://chatgpt.com/",
+  "success": true,
+  "execution_time": "30_seconds_wait",
+  "files_created": [
+    "chatgpt_full_response.md",
+    "chatgpt_response_only.md",
+    "chatgpt_final_state.png",
+    "debug_page_source.html"
+  ]
+}

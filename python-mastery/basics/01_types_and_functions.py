@@ -25,7 +25,7 @@ class User:
             "email": self.email,
             "created_at": self.created_at.isoformat(),
             "is_active": self.is_active,
-            "phone_number": self.phone_number,
+            "phone_number": self.phone_number if self.phone_number is not None else "",
         }
 
 
