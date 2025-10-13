@@ -1,9 +1,12 @@
+"""my index"""
+
 from typing import List
 
 from pydantic import BaseModel, Field
 
 
 class Person(BaseModel):
+    """my person"""
     name: str = Field(description="The person's full name")
     age: int = Field(description="The person's age")
     hobbies: List[str] = Field(description="List of the person's hobbies")
@@ -18,6 +21,7 @@ class Person(BaseModel):
 
 
 class Product(BaseModel):
+    """my product"""
     name: str = Field(description="The product's name")
     price: float = Field(description="The product's price")
     description: str = Field(description="The product's description")
