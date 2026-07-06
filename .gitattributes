@@ -1,0 +1,32 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Explicit text files
+*.md text
+*.json text
+*.yaml text
+*.yml text
+*.toml text
+*.ts text
+*.tsx text
+*.js text
+*.jsx text
+*.css text
+*.html text
+*.py text
+*.sh text
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+
+# Lockfiles
+pnpm-lock.yaml linguist-generated=true
+**/uv.lock linguist-generated=true

@@ -1,36 +1,131 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/articles/ignoring-files/
 
-# dependencies
-/node_modules
-/.pnp
+# Dependencies
+node_modules/
+.pnp
 .pnp.js
 .yarn/install-state.gz
 
-# testing
-/coverage
-.venv
-# next.js
-/.next/
-/out/
-.env*
-# production
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python packaging / build
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Testing and type-checking caches
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage/
+*.lcov
+.nyc_output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Next.js
+.next/
+out/
+
+# Production / bundler output
 /build
 
-# misc
-.DS_Store
-*.pem
+# Environment variables (keep examples tracked)
+.env
+.env.*
+!.env.example
+!.env*.example
 
-# debug
+# Logs
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# local env files
-.env*.local
-/.venv
-# vercel
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE / editor (share team settings; ignore generated extension files)
+.idea/
+*.swp
+*.swo
+*~
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Vercel
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Tool caches
+.cache/
+.parcel-cache
+.eslintcache
+.stylelintcache
+.turbo
+
+# TLS / secrets
+*.pem
+
+# Generated project outputs (keep directory placeholder)
+**/outputs/*
+!**/outputs/.gitkeep
+
+# Use pnpm at repo root (avoid duplicate npm lockfile)
+package-lock.json
+
+# Cursor local state (rules/skills in repo root are tracked intentionally)
+.cursor/
+
+# Misc local AI editor configs
+.kilocode/
+.windsurf/
